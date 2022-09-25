@@ -16,7 +16,7 @@ const Home: NextPage<PostsInterface> = (props: PostsInterface) => {
     return (
         <>
             <h1 className="text-3xl font-bold underline text-red-500">
-                Hello world!
+                Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!
             </h1>
         </>
     )

@@ -1,9 +1,16 @@
-import { FC, PropsWithChildren } from "react"
+import { FC, PropsWithChildren, useEffect } from "react"
 
-const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
-    <>
-        <main className="mx-auto max-w-6xl container px-5">{children}</main>
-    </>
-)
+const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
+    useEffect(() =>
+    {        
+        document.body.classList.add("bg-dark");
+    });
+
+    return (
+        <>
+            <main className="mx-auto max-w-4xl container px-5">{children}</main>
+        </>
+    )
+}
 
 export default DefaultLayout
