@@ -2,7 +2,7 @@ import "../styles/tailwind.css"
 import type { AppProps } from "next/app"
 
 import { Seo } from "../components"
-import { DefaultLayout, Navbar } from "../layouts"
+import { DefaultLayout, Navbar, Footer } from "../layouts"
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Seo />
             <Navbar />
             <Component {...pageProps} />
+            <Footer />
         </DefaultLayout>
     )
 }
