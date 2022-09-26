@@ -1,4 +1,5 @@
 import type { NextPage } from "next"
+import { Hero } from "../components"
 import { getAllPosts } from "../lib/notion"
 import { PostsInterface } from "../typings/posts"
 
@@ -12,12 +13,17 @@ export async function getServerSideProps() {
 }
 
 const Home: NextPage<PostsInterface> = (props: PostsInterface) => {
-    console.log(props.posts)
     return (
         <>
-            <h1 className="text-3xl font-bold underline text-red-500">
-                Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!
-            </h1>
+            <Hero />
+            <section className="mt-28">
+                <h1 className="text-3xl font-bold underline text-red-500">
+                    Hello world!Hello world!Hello world!Hello world!Hello
+                    world!Hello world!Hello world!Hello world!Hello world!Hello
+                    world!Hello world!Hello world!Hello world!Hello world!Hello
+                    world!Hello world!Hello world!Hello world!Hello world!
+                </h1>
+            </section>
         </>
     )
 }
