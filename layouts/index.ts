@@ -1,4 +1,4 @@
-import DefaultLayout from "./default"
-import Navbar from "./navbar"
+import DefaultLayout from "./DefaultLayout"
+import Navbar from "./Navbar"
 
 export { DefaultLayout, Navbar }
