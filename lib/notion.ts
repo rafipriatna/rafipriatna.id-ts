@@ -51,3 +51,21 @@ export const getAllWriteups = async () => {
 
     return allWriteups
 }
+
+export const getAllContents = async () => {
+    const allContents = await notion.databases.query({
+        database_id: `${process.env.NOTION_DATABASE_POSTS}`,
+        filter: {
+            and: [
+                {
+                    property: "status",
+                    select: {
+                        equals: "Posted",
+                    },
+                },
+            ],
+        },
+    })
+
+    return allContents
+}

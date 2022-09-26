@@ -18,16 +18,15 @@ export default function Posts({ posts, showYear = false }: PostsInterface) {
                     return (
                         <>
                             <Heading key={index} title={title} />
+                            {year.map((post: PostInterface, index) => {
+                                return (
+                                    <div key={index}>
+                                        <PostItem {...post} />
+                                    </div>
+                                )
+                            })}
                         </>
                     )
-                    // year.map((post: PostInterface, index) => {
-                    //     console.log(post.properties.name.title[0].plain_text)
-                    //     return (
-                    //         <p className="text-lg" key={index}>
-                    //             Tes
-                    //         </p>
-                    //     )
-                    // })
                 })}
             </>
         )
