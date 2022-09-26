@@ -1,7 +1,7 @@
 import type { NextPage } from "next"
 import { Hero } from "../components"
 import { getAllPosts } from "../lib/notion"
-import { PostsInterface } from "../typings/posts"
+import { PostsInterface } from "../typings/Posts"
 
 export async function getServerSideProps() {
     const { results } = await getAllPosts()

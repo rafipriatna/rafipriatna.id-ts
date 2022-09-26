@@ -1,3 +1,4 @@
 import Hero from "./Hero"
+import Seo from "./Seo"
 
-export { Hero }
+export { Hero, Seo }
