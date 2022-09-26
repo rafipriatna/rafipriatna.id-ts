@@ -1,8 +1,8 @@
-type HeaderType = {
+type HeadingType = {
     title: string
 }
 
-export default function Header({ title }: HeaderType) {
+export default function Heading({ title }: HeadingType) {
     return (
         <h1 className="text-3xl mb-5">
             {title}
