@@ -19,7 +19,7 @@ export default function Hero() {
 
     return (
         <div className="grid items-center grid-cols-1 md:grid-cols-6 my-1 lg:my-20">
-            <div className="order-2 col-span-5 lg:my-0 my-10">
+            <div className="order-2 col-span-5">
                 <h1 className="text-4xl font-semibold leading-tight md:leading-normal md:order-1 max-w-lg">
                     Hei,{" "}
                     <span role="img" aria-label="hand">
@@ -47,18 +47,19 @@ export default function Hero() {
                 </p>
 
                 {links.map((link, index) => (
-                    <button
+                    <a
                         className="text-white text-lg transition duration-300 ease-in-out rounded-lg border-2 border-purple hover:bg-purple my-3 px-3 py-1 mr-3 lg:px-6 lg:py-2 lg:mr-6"
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
                         key={index}
                     >
-                        <a href={link.href} target="_blank" rel="noreferrer">
-                            {link.name}
-                        </a>
-                    </button>
+                        {link.name}
+                    </a>
                 ))}
             </div>
 
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2 hidden md:block">
                 <Image
                     src={Me}
                     alt="8bit me wkwkw"
