@@ -18,7 +18,7 @@ export default function Hero() {
     ]
 
     return (
-        <div className="grid items-center grid-cols-1 md:grid-cols-6 my-10 lg:my-20">
+        <div className="grid items-center grid-cols-1 md:grid-cols-6 my-1 lg:my-20">
             <div className="order-2 col-span-5 lg:my-0 my-10">
                 <h1 className="text-4xl font-semibold leading-tight md:leading-normal md:order-1 max-w-lg">
                     Hei,{" "}
@@ -63,8 +63,7 @@ export default function Hero() {
                     src={Me}
                     alt="8bit me wkwkw"
                     className="rounded-lg"
-                    width="500px"
-                    height="500px"
+                    layout="responsive"
                 />
             </div>
         </div>
