@@ -1,5 +1,5 @@
 import type { NextPage } from "next"
-import { Hero } from "../components"
+import { Hero, Heading } from "../components"
 import { getAllPosts } from "../lib/notion"
 import { PostsInterface } from "../typings/Posts"
 
@@ -17,6 +17,7 @@ const Home: NextPage<PostsInterface> = (props: PostsInterface) => {
         <>
             <Hero />
             <section className="mt-10 lg:mt-28">
+                <Heading title="ARTIKEL TERBARU" />
                 <h1 className="text-3xl font-bold underline text-red-500">
                     Hello world!Hello world!Hello world!Hello world!Hello
                     world!Hello world!Hello world!Hello world!Hello world!Hello
