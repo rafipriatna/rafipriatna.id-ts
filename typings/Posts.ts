@@ -53,3 +53,9 @@ export interface PostsInterface {
     posts: [PostInterface],
     showYear?: boolean
 }
+
+export interface HomePostsInterface {
+    posts?: [PostInterface],
+    writeups?: [PostInterface],
+    showYear?: boolean
+}

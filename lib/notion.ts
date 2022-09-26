@@ -8,12 +8,46 @@ export const getAllPosts = async () => {
     const allPosts = await notion.databases.query({
         database_id: `${process.env.NOTION_DATABASE_POSTS}`,
         filter: {
-            property: "status",
-            select: {
-                equals: "Posted",
-            },
+            and: [
+                {
+                    property: "status",
+                    select: {
+                        equals: "Posted",
+                    },
+                },
+                {
+                    property: "type",
+                    select: {
+                        equals: "Article",
+                    },
+                },
+            ],
         },
     })
 
     return allPosts
+}
+
+export const getAllWriteups = async () => {
+    const allWriteups = await notion.databases.query({
+        database_id: `${process.env.NOTION_DATABASE_POSTS}`,
+        filter: {
+            and: [
+                {
+                    property: "status",
+                    select: {
+                        equals: "Posted",
+                    },
+                },
+                {
+                    property: "type",
+                    select: {
+                        equals: "Writeup",
+                    },
+                },
+            ],
+        },
+    })
+
+    return allWriteups
 }

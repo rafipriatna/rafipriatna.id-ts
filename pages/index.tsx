@@ -1,24 +1,38 @@
 import type { NextPage } from "next"
 import { Hero, Heading, Posts } from "../components"
-import { getAllPosts } from "../lib/notion"
-import { PostsInterface } from "../typings/Posts"
+import { getAllPosts, getAllWriteups } from "../lib/notion"
+import { HomePostsInterface } from "../typings/Posts"
 
 export async function getServerSideProps() {
-    const { results } = await getAllPosts()
+    const articles = await getAllPosts()
+    const writeups = await getAllWriteups()
+
     return {
         props: {
-            posts: results,
+            posts: articles.results,
+            writeups: writeups.results,
         },
     }
 }
 
-const Home: NextPage<PostsInterface> = (props: PostsInterface) => {
+const Home: NextPage<HomePostsInterface> = (props: HomePostsInterface) => {
     return (
         <>
             <Hero />
             <section className="mt-10 lg:mt-28">
-                <Heading title="ARTIKEL TERBARU" />
-                <Posts posts={props.posts} />
+                {props.posts && (
+                    <div>
+                        <Heading title="ARTIKEL TERBARU" />
+                        <Posts posts={props.posts} />
+                    </div>
+                )}
+
+                {props.writeups && (
+                    <div className="mt-10">
+                        <Heading title="WRITEUP" />
+                        <Posts posts={props.writeups} />
+                    </div>
+                )}
             </section>
         </>
     )
