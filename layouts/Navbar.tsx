@@ -45,15 +45,15 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                <div className="hidden lg:block px-2 flex flex-row w-full text-gray-new">
+                <div className="hidden lg:block flex flex-row w-full text-gray-new">
                     <div className="flex justify-end items-center">
                         {menus.map((item, index) => {
                             return (
                                 <li
                                     className={`${
-                                        router.pathname == item.href ??
+                                        router.pathname == item.href &&
                                         "text-purple"
-                                    } transition duration-200 ease-in-out mx-4 lg:py-2 block font-medium m-1 hover:text-purple`}
+                                    } ${index != menus.length - 1 ? "mx-4" : "ml-4" } transition duration-200 ease-in-out lg:py-2 block font-medium hover:text-purple`}
                                     key={index}
                                 >
                                     <Link href={item.href}>{item.name}</Link>
