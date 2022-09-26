@@ -1,17 +1,55 @@
-export interface PostsInterface {
-    posts: [
-        {
-            id: string
-            created_time: any
-            icon: object
-            properties: {
-                name: any
-                daate: any
-                description: any
-                slug: any
-                status: any
-                tags: any
+export interface PostInterface {
+    id: string
+    icon: {
+        emoji: string
+    }
+    properties: {
+        name: {
+            title: [
+                {
+                    annotations: object
+                    plain_text: string
+                }
+            ]
+        }
+        date: {
+            date: {
+                start: string
             }
         }
-    ]
+        description: {
+            rich_text: [
+                {
+                    annotations: object
+                    plain_text: string
+                }
+            ]
+        }
+        slug: {
+            rich_text: [
+                {
+                    annotations: object
+                    plain_text: string
+                }
+            ]
+        }
+        status: {
+            select: {
+                name: string
+            }
+        }
+        tags: {
+            multi_select: [
+                {
+                    name: string
+                    color: string
+                }
+            ]
+        }
+    }
+}
+
+export interface PostsInterface {
+    posts: [PostInterface],
+    showYear?: boolean
 }
