@@ -8,7 +8,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <>
-            <main className="mx-auto max-w-4xl container px-5">{children}</main>
+            <main className="mx-auto max-w-4xl container px-5 text-white">{children}</main>
         </>
     )
 }
