@@ -8,7 +8,7 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            posts: articles.results,
+            posts: articles,
         },
     }
 }

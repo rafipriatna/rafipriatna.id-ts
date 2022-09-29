@@ -4,6 +4,7 @@ const notion = new Client({
     auth: process.env.NOTION_SECRET,
 })
 
+// GET Articles
 export const getAllPosts = async () => {
     const allPosts = await notion.databases.query({
         database_id: `${process.env.NOTION_DATABASE_POSTS}`,
@@ -25,7 +26,7 @@ export const getAllPosts = async () => {
         },
     })
 
-    return allPosts
+    return allPosts.results
 }
 
 export const getAllWriteups = async () => {
@@ -49,7 +50,7 @@ export const getAllWriteups = async () => {
         },
     })
 
-    return allWriteups
+    return allWriteups.results
 }
 
 export const getAllContents = async () => {
@@ -67,5 +68,24 @@ export const getAllContents = async () => {
         },
     })
 
-    return allContents
+    return allContents.results
+}
+
+// Article Detail
+export const getPostBlocks = async (blockId: string) => {
+    const response = await notion.blocks.children.list({
+        block_id: blockId,
+    })
+
+    return response.results
+}
+
+export const getPageDetail = async (data: any, slug: string) => {
+    const pageDetail: any = data.find((result: any) => {
+        return result.properties.slug.rich_text[0].plain_text === slug
+    })
+
+    const pageBlocks = getPostBlocks(pageDetail.id)
+
+    return pageBlocks
 }

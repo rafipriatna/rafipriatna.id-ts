@@ -1,21 +1,27 @@
 import type { NextPage } from "next"
 import { Hero, Heading, Posts } from "../components"
-import { getAllPosts, getAllWriteups } from "../lib/notion"
+import { getAllPosts, getAllWriteups, getPostBlocks } from "../lib/notion"
 import { HomePostsInterface } from "../typings/Posts"
 
 export async function getServerSideProps() {
     const articles = await getAllPosts()
     const writeups = await getAllWriteups()
+    const testDetailPost = await getPostBlocks(
+        "85bb3d62-07f1-433e-9b9b-c0b28d499836"
+    )
 
+    console.log(testDetailPost)
     return {
         props: {
-            posts: articles.results,
-            writeups: writeups.results,
+            posts: articles,
+            writeups: writeups,
+            test: testDetailPost
         },
     }
 }
 
 const Home: NextPage<HomePostsInterface> = (props: HomePostsInterface) => {
+    console.log(props.posts)
     return (
         <>
             <Hero />
