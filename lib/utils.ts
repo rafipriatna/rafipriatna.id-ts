@@ -1,4 +1,4 @@
-export function reformatDate(date: Date) {
+export function reformatDate(date: string) {
     const newDate = new Date(date)
     const formattedDate = newDate.toLocaleDateString("id-ID", {
         day: "numeric",
