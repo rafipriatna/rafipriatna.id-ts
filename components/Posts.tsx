@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Heading from "./Heading"
 import type { PostsInterface, PostInterface } from "../typings/Posts"
+import { reformatDate } from "../lib/utils"
 
 export default function Posts({ posts, showYear = false }: PostsInterface) {
     const collections: PostInterface[][] = []
@@ -47,12 +48,7 @@ export default function Posts({ posts, showYear = false }: PostsInterface) {
 
 const PostItem = (post: PostInterface) => {
     const thumbnail = post.icon?.emoji || "❔"
-    const date = new Date(post.properties.date.date.start)
-    const postDate = date.toLocaleDateString("id-ID", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-    })
+    const postDate = reformatDate(post.properties.date.date.start)
 
     return (
         <Link href={post.properties.slug.rich_text[0].plain_text}>
