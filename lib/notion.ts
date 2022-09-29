@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client"
+import { PostDetailInterface } from "../typings/Posts"
 
 const notion = new Client({
     auth: process.env.NOTION_SECRET,
@@ -80,12 +81,16 @@ export const getPostBlocks = async (blockId: string) => {
     return response.results
 }
 
-export const getPageDetail = async (data: any, slug: string) => {
-    const pageDetail: any = data.find((result: any) => {
+export const getPageDetail = async (data: any[], slug: string) => {
+    const page = data.find((result: any) => {
         return result.properties.slug.rich_text[0].plain_text === slug
     })
 
-    const pageBlocks = getPostBlocks(pageDetail.id)
+    const pageBlocks = await getPostBlocks(page.id)
+    const pageData: PostDetailInterface = {
+        detail: page,
+        blocks: pageBlocks,
+    }
 
-    return pageBlocks
+    return pageData
 }

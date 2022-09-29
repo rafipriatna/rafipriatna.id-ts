@@ -59,3 +59,8 @@ export interface HomePostsInterface {
     writeups?: [PostInterface],
     showYear?: boolean
 }
+
+export interface PostDetailInterface {
+    detail: PostInterface,
+    blocks: any[]
+}
