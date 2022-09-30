@@ -10,7 +10,6 @@ export async function getServerSideProps() {
         "85bb3d62-07f1-433e-9b9b-c0b28d499836"
     )
 
-    console.log(testDetailPost)
     return {
         props: {
             posts: articles,
@@ -21,7 +20,6 @@ export async function getServerSideProps() {
 }
 
 const Home: NextPage<HomePostsInterface> = (props: HomePostsInterface) => {
-    console.log(props.posts)
     return (
         <>
             <Hero />
