@@ -1,5 +1,5 @@
 import type { NextPage } from "next"
-import { Posts } from "../components"
+import { Posts, Seo } from "../components"
 import { getAllContents } from "../lib/notion"
 import { PostsInterface } from "../typings/Posts"
 
@@ -16,8 +16,9 @@ export async function getServerSideProps() {
 const Blog: NextPage<PostsInterface> = (props: PostsInterface) => {
     return (
         <>
-            <h1 className="text-5xl text-center font-semibold">BLOG</h1>
-            <section className="mt-10">
+            <Seo title="Blog" />
+            <h1 className="text-5xl text-center font-semibold my-10">BLOG</h1>
+            <section>
                 {props.posts && (
                     <div>
                         <Posts posts={props.posts} showYear />
