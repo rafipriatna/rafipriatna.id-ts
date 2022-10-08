@@ -47,7 +47,7 @@ export default function Posts({ posts, showYear = false }: PostsInterface) {
 }
 
 const PostItem = (post: PostInterface) => {
-    const thumbnail = post.icon?.emoji || "❔"
+    const thumbnail = post.icon?.emoji || "📝"
     const postDate = reformatDate(post.properties.date.date.start)
 
     return (
