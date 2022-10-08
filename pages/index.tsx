@@ -6,15 +6,10 @@ import { HomePostsInterface } from "../typings/Posts"
 export async function getServerSideProps() {
     const articles = await getAllPosts()
     const writeups = await getAllWriteups()
-    const testDetailPost = await getPostBlocks(
-        "85bb3d62-07f1-433e-9b9b-c0b28d499836"
-    )
-
     return {
         props: {
             posts: articles,
-            writeups: writeups,
-            test: testDetailPost
+            writeups: writeups
         },
     }
 }
