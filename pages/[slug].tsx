@@ -1,4 +1,5 @@
 import { Fragment } from "react"
+import { Seo } from "../components"
 import { getAllContents, getPageDetail } from "../lib/notion"
 import { Blocks } from "../lib/render"
 import { PostDetailInterface } from "../typings/Posts"
@@ -23,26 +24,45 @@ export async function getServerSideProps({
 }
 
 export default function PostDetail(props: PostDetailInterface) {
+    const thumbnail = props.detail.icon?.emoji || "📝"
+
     return (
-        <article className="prose max-w-full break-words text-xl text-white">
-            <header className="break-words not-prose">
-                <div className="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 dark:border-gray-600 pb-6 dark:text-white">
-                    <div>
-                        <h6 className="font-semibold text-4xl mb-5">
-                            {props.detail.properties.name.title[0].plain_text}
-                        </h6>
-                        <p className="text-gray-400 text-lg">
-                            Terbit pada tanggal{" "}
-                            {reformatDate(
-                                props.detail.properties.date.date.start
-                            )}
-                        </p>
+        <>
+            <Seo
+                title={props.detail.properties.name.title[0].plain_text}
+                description={
+                    props.detail.properties.description.rich_text[0].plain_text
+                }
+            />
+            <article className="prose max-w-full break-words text-xl text-white">
+                <header className="break-words not-prose">
+                    <div className="flex flex-row">
+                        <div className="text-6xl mr-5">{thumbnail}</div>
+                        <div className="w-full font-light">
+                            <div>
+                                <h6 className="font-semibold text-4xl">
+                                    {
+                                        props.detail.properties.name.title[0]
+                                            .plain_text
+                                    }
+                                </h6>
+                                <p className="text-gray-400 text-lg mt-2">
+                                    Terbit pada tanggal{" "}
+                                    {reformatDate(
+                                        props.detail.properties.date.date.start
+                                    )}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </header>
-            {props.blocks.map((block, index) => {
-                return <Fragment key={index}>{Blocks(block)}</Fragment>
-            })}
-        </article>
+                    <div className="border-b border-gray-200 my-6">
+
+                    </div>
+                </header>
+                {props.blocks.map((block, index) => {
+                    return <Fragment key={index}>{Blocks(block)}</Fragment>
+                })}
+            </article>
+        </>
     )
 }
