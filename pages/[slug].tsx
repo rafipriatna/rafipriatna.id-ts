@@ -35,9 +35,9 @@ export default function PostDetail(props: PostDetailInterface) {
                 }
             />
             <article className="prose max-w-full break-words text-xl text-white">
-                <header className="break-words not-prose">
-                    <div className="flex flex-row">
-                        <div className="text-6xl mr-5">{thumbnail}</div>
+                <header className="break-words not-prose py-5 text-center lg:text-left">
+                    <div className="flex flex-col lg:flex-row">
+                        <div className="text-6xl mr-5 mb-5 lg:mb-0">{thumbnail}</div>
                         <div className="w-full font-light">
                             <div>
                                 <h6 className="font-semibold text-4xl">
@@ -54,9 +54,6 @@ export default function PostDetail(props: PostDetailInterface) {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div className="border-b border-gray-200 my-6">
-
                     </div>
                 </header>
                 {props.blocks.map((block, index) => {

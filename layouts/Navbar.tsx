@@ -26,8 +26,8 @@ export default function Navbar() {
     return (
         <>
             <div className="transition text-xl lg:my-5">
-                <div className="flex flex-col lg:flex-row items-center">
-                    <div className="flex items-center justify-center py-4 uppercase font-semibold text-gray-new lg:justify-between">
+                <div className="flex flex-col lg:flex-row items-center border-b py-4 my-2 lg:border-none">
+                    <div className="flex items-center justify-center uppercase font-semibold text-gray-new lg:justify-between">
                         <Link href="/">
                             <div className="flex space-x-2 items-center">
                                 <div>
