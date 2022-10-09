@@ -12,7 +12,8 @@ module.exports = {
         "dark": "#181818",
         "purple": "#8758FF",
         "blue": "#8758FF",
-        "gray-new": "#F2F2F2"
+        "gray-new": "#F2F2F2",
+        "soft-dark": "#1e1e1e"
       },
       typography: ({ theme }) => ({
         default: {

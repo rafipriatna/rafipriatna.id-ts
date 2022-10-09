@@ -134,7 +134,7 @@ export function Blocks(block: BlockInterface) {
 
         case "callout":
             return (
-                <div className="flex space-x-4 bg-slate-800 rounded-lg p-3 my-5">
+                <div className="flex space-x-4 bg-purple rounded-lg p-3 my-5 bg-opacity-60">
                     {value.icon && <span>{value.icon.emoji}</span>}
                     <div>
                         <Text {...value} />
@@ -144,7 +144,7 @@ export function Blocks(block: BlockInterface) {
 
         case "quote":
             return (
-                <div className="max-w-4xl p-4 bg-gray-800 rounded-lg shadow bg-slate-800">
+                <div className="max-w-4xl p-4 bg-soft-dark rounded-lg shadow">
                     <div className="mb-2">
                         <div className="h-3 text-3xl text-left">“</div>
                         <p className="px-4 text-center">
