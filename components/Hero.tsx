@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Me from "../assets/me.jpg"
+import Foto from "../assets/Foto.png"
 
 export default function Hero() {
     const links = [
@@ -59,11 +59,11 @@ export default function Hero() {
                         </a>
                     ))}
                 </div>
-                <div className="w-2/6 relative hidden lg:block">
+                <div className="w-80 relative hidden lg:block">
                     <Image
-                        src={Me}
-                        alt="8bit me wkwkw"
-                        className="rounded-lg"
+                        src={Foto}
+                        alt="Meeeee"
+                        className="rounded-full"
                         objectFit="cover"
                         layout="fill"
                     />
