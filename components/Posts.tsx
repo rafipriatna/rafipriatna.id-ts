@@ -3,6 +3,11 @@ import Heading from "./Heading"
 import type { PostsInterface, PostInterface } from "../typings/Posts"
 import { reformatDate } from "../lib/utils"
 
+interface GroupByYearInterface {
+    year: number
+    posts: PostInterface[]
+}
+
 export default function Posts({ posts, showYear = false }: PostsInterface) {
     const collections: PostInterface[][] = []
 
@@ -11,31 +16,59 @@ export default function Posts({ posts, showYear = false }: PostsInterface) {
         collections[year] = [...(collections[year] || []), post]
     })
 
+    const postsData: GroupByYearInterface[] = []
+
+    collections.map((data, index) => {
+        const year = index
+        const posts: PostInterface[] = []
+
+        data.map((post) => {
+            posts.push(post)
+        })
+
+        postsData.push({
+            year,
+            posts,
+        })
+    })
+
+    postsData.reverse()
+
     if (showYear) {
         return (
             <>
-                {collections.map((year, index) => {
-                    const title = index.toString()
-                    return (
-                        <>
-                            <Heading key={index} title={title} />
-                            {year.map((post: PostInterface, index) => {
-                                return (
-                                    <div key={index}>
-                                        <PostItem {...post} />
-                                    </div>
-                                )
-                            })}
-                        </>
-                    )
-                })}
+                {postsData.map(
+                    (postData: GroupByYearInterface, index: number) => {
+                        const title = postData.year.toString()
+                        return (
+                            <div key={index}>
+                                <div className="my-5">
+                                    <Heading title={title} />
+                                </div>
+
+                                {postData.posts.map(
+                                    (post: PostInterface, index: number) => {
+                                        return (
+                                            <div
+                                                className="my-2"
+                                                key={title + index}
+                                            >
+                                                <PostItem {...post} />
+                                            </div>
+                                        )
+                                    }
+                                )}
+                            </div>
+                        )
+                    }
+                )}
             </>
         )
     }
 
     return (
         <>
-            {posts.map((post: PostInterface, index) => {
+            {posts.map((post: PostInterface, index: number) => {
                 return (
                     <div key={index}>
                         <PostItem {...post} />

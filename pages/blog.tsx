@@ -14,8 +14,6 @@ export async function getServerSideProps() {
 }
 
 const Blog: NextPage<PostsInterface> = (props: PostsInterface) => {
-    props.posts.sort()
-    console.log(props.posts)
     return (
         <>
             <Seo title="Blog" />
