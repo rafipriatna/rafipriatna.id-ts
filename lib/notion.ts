@@ -25,6 +25,12 @@ export const getAllPosts = async () => {
                 },
             ],
         },
+        sorts: [
+            {
+                property: "date",
+                direction: "descending",
+            },
+        ],
     })
 
     return allPosts.results
@@ -49,6 +55,12 @@ export const getAllWriteups = async () => {
                 },
             ],
         },
+        sorts: [
+            {
+                property: "date",
+                direction: "descending",
+            },
+        ],
     })
 
     return allWriteups.results
@@ -67,6 +79,12 @@ export const getAllContents = async () => {
                 },
             ],
         },
+        sorts: [
+            {
+                property: "date",
+                direction: "descending",
+            },
+        ],
     })
 
     return allContents.results
