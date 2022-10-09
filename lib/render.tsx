@@ -5,7 +5,7 @@ import { Line } from "../components"
 import { TextInterface, BlockInterface } from "../typings/Notion"
 
 // Prism
-import "prismjs/themes/prism-okaidia.css" // Theme
+import "prism-themes/themes/prism-vsc-dark-plus.min.css" // Theme
 // Prism Language
 import "prismjs/components/prism-javascript"
 import "prismjs/components/prism-typescript"
