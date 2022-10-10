@@ -10,4 +10,8 @@
         background-attachment: fixed;
         background-size: 50px 50px;
     }
+
+    pre[class*="language-"] {
+        margin-top: -5px !important;
+    }
 }

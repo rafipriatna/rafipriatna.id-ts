@@ -125,11 +125,16 @@ export function Blocks(block: BlockInterface) {
 
         case "code":
             return (
-                <pre>
-                    <code className={`language-${value.language}`}>
-                        {value.rich_text[0].text.content}
-                    </code>
-                </pre>
+                <>
+                    {value.caption[0] && (
+                        <div className="text-center text-sm bg-purple bg-opacity-50 pt-1 pb-2 rounded-t-md">{value.caption[0].plain_text}</div>
+                    )}
+                    <pre>
+                        <code className={`language-${value.language}`}>
+                            {value.rich_text[0].text.content}
+                        </code>
+                    </pre>
+                </>
             )
 
         case "callout":
