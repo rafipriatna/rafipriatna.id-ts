@@ -18,7 +18,7 @@ export default function Hero() {
     ]
 
     return (
-        <div className="my-10 lg:my-20">
+        <div className="my-10">
             <div className="flex flex-row">
                 <div className="w-full lg:w-4/6">
                     <h1 className="text-4xl font-semibold leading-tight md:leading-normal">

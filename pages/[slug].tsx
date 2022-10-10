@@ -35,7 +35,7 @@ export default function PostDetail(props: PostDetailInterface) {
                 }
             />
             <article className="prose max-w-full break-words text-xl text-white">
-                <header className="break-words not-prose py-5 text-center lg:text-left">
+                <header className="break-words not-prose my-10 text-center lg:text-left">
                     <div className="flex flex-col lg:flex-row">
                         <div className="text-6xl mr-5 mb-5 lg:mb-0">
                             {thumbnail}
