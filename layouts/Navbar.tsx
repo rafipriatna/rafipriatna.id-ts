@@ -25,8 +25,8 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="transition text-xl lg:my-5">
-                <div className="flex flex-col lg:flex-row items-center border-b py-4 my-2 lg:border-none">
+            <div className="transition text-xl sticky top-0 bg-soft-dark border-b border-gray-400/20 bg-opacity-80 backdrop-filter backdrop-blur-md z-10">
+                <div className="flex flex-col lg:flex-row items-center py-4 mx-auto px-5 max-w-4xl container">
                     <div className="flex items-center justify-center uppercase font-semibold text-gray-new lg:justify-between">
                         <Link href="/">
                             <div className="flex space-x-2 items-center">
@@ -73,7 +73,7 @@ export default function Navbar() {
             </div>
 
             <div>
-                <section className="block lg:hidden fixed inset-x-0 bottom-0 z-50 shadow-lg backdrop-blur-lg bg-opacity-50 border-t-2 border-gray-400/20">
+                <section className="block lg:hidden fixed inset-x-0 bottom-0 z-10 shadow-md backdrop-blur-lg bg-soft-dark bg-opacity-80 border-t border-gray-400/20 text-white">
                     <div id="tabs" className="flex justify-between">
                         <div className="w-full justify-center inline-block text-center pt-2 pb-1">
                             <svg

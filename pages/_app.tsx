@@ -7,7 +7,7 @@ import { DefaultLayout, Navbar, Footer } from "../layouts"
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <DefaultLayout>
+        <>
             <NextNProgress
                 color="#8758FF"
                 startPosition={0.3}
@@ -15,11 +15,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 height={3}
                 showOnShallow={true}
             />
-            <Seo />
             <Navbar />
-            <Component {...pageProps} />
-            <Footer />
-        </DefaultLayout>
+            <DefaultLayout>
+                <Seo />
+                <Component {...pageProps} />
+                <Footer />
+            </DefaultLayout>
+        </>
     )
 }
 
