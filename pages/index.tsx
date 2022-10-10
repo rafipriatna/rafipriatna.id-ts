@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import { Hero, Heading, Posts } from "../components"
-import { getAllPosts, getAllWriteups, getPostBlocks } from "../lib/notion"
+import { getAllPosts, getAllWriteups } from "../lib/notion"
 import { HomePostsInterface } from "../typings/Posts"
 
 export async function getServerSideProps() {
