@@ -166,13 +166,10 @@ export function Blocks(block: BlockInterface) {
             const caption =
                 value.caption.length >= 1 ? value.caption[0].plain_text : ""
             return (
-                <figure className="mt-0">
+                <figure className="mt-0 rounded-xl relative h-96 w-full">
                     <Image
-                        className="rounded-xl"
-                        width="100%"
-                        height="100%"
-                        layout="responsive"
-                        objectFit="contain"
+                        layout="fill"
+                        objectFit="cover"
                         alt={
                             caption
                                 ? caption
