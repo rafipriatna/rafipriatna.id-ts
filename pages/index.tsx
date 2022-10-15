@@ -8,8 +8,8 @@ export async function getServerSideProps() {
     const writeups = await getAllWriteups()
     return {
         props: {
-            posts: articles,
-            writeups: writeups
+            posts: articles.slice(0, 5),
+            writeups: writeups.slice(0, 5)
         },
     }
 }
