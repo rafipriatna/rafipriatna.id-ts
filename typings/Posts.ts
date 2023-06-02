@@ -3,6 +3,7 @@ export interface PostInterface {
     icon: {
         emoji: string
     }
+    ogImage: string
     properties: {
         name: {
             title: [

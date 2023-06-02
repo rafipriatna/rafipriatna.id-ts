@@ -25,6 +25,8 @@ export async function getServerSideProps({
 
 export default function PostDetail(props: PostDetailInterface) {
     const thumbnail = props.detail.icon?.emoji || "📝"
+    const gambar = props.blocks.find(objek => objek.type === "image")
+    const ogImage = gambar?.type === "external" ? gambar?.image.external.url : gambar?.image.file.url ?? ""
 
     return (
         <>
@@ -33,6 +35,7 @@ export default function PostDetail(props: PostDetailInterface) {
                 description={
                     props.detail.properties.description.rich_text[0].plain_text
                 }
+                ogImage={ogImage}
             />
             <article className="prose max-w-full break-words text-xl text-white font-light leading-relaxed">
                 <header className="break-words not-prose my-10 text-center lg:text-left">

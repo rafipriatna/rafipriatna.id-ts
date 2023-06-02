@@ -45,7 +45,7 @@ export default function Seo({
             <meta
                 key="og_image"
                 property="og:image"
-                content={ogImage ?? DEFAULT_OG_IMAGE}
+                content={ogImage == "" ? DEFAULT_OG_IMAGE : ogImage}
             />
             <meta
                 key="og_image:alt"
