@@ -41,9 +41,7 @@ export default function Hero() {
                         </span>
                         .
                         <span className="block">
-                            Di sini akan banyak berisi tulisan random tentang
-                            saya, opini, dan kebanyakan tentang dokumentasi saya
-                            pribadi saat belajar.
+                            Saya seorang Offensive Cyber Security Engineer. Saya menulis artikel di sini selain untuk bersenang-senang, juga untuk catatan belajar saya.
                         </span>
                     </p>
 
