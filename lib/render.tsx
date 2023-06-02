@@ -13,8 +13,6 @@ import "prismjs/components/prism-python"
 import "prismjs/components/prism-bash"
 import "prismjs/components/prism-php-extras"
 
-const imagePlaceholder = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -8 40 40' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' className='feather feather-image'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'%3E%3C/circle%3E%3Cpolyline points='21 15 16 10 5 21'%3E%3C/polyline%3E%3C/svg%3E`
-
 export function Text(content: TextInterface) {
     useEffect(() => {
         Prism.highlightAll()
@@ -166,25 +164,31 @@ export function Blocks(block: BlockInterface) {
             const caption =
                 value.caption.length >= 1 ? value.caption[0].plain_text : ""
             return (
-                <figure className="mt-0 rounded-xl relative h-96 w-full">
-                    <Image
-                        layout="fill"
-                        objectFit="cover"
-                        alt={
+                <div className="relative">
+                    <figure className="my-4 p-0 rounded-xl relative overflow-hidden">
+                        <div className="aspect-w-16 aspect-h-9 max-h-full bg-soft-dark bg-opacity-80 backdrop-filter backdrop-blur-md p-2">
+                        <Image
+                            layout="responsive"
+                            width={16}
+                            height={9}
+                            className="object-scale-down"
+                            objectPosition="center"
+                            alt={
                             caption
                                 ? caption
                                 : "A visual depiction of what is being written about"
-                        }
-                        src={src}
-                        placeholder="blur"
-                        blurDataURL={imagePlaceholder}
-                    />
+                            }
+                            src={src}
+                        />
+                        </div>
+                    </figure>
+
                     {caption && (
                         <figcaption className="text-center">
-                            {caption}
+                        <div>{caption}</div>
                         </figcaption>
                     )}
-                </figure>
+                </div>
             )
         }
 
