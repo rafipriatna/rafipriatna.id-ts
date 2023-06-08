@@ -37,7 +37,7 @@ export default function PostDetail(props: PostDetailInterface) {
                 }
                 ogImage={ogImage}
             />
-            <article className="prose max-w-full break-words text-xl text-white font-light leading-relaxed">
+            <article className="prose max-w-full break-words text-lg text-white font-light leading-relaxed tracking-wide text-justify">
                 <header className="break-words not-prose my-10 text-center lg:text-left">
                     <div className="flex flex-col lg:flex-row">
                         <div className="text-6xl mr-5 mb-5 lg:mb-0">

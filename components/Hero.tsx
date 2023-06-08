@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="my-10 lg:my-20">
             <div className="flex flex-row">
                 <div className="w-full lg:w-4/6">
-                    <h1 className="text-4xl font-semibold leading-tight md:leading-normal">
+                    <h1 className="text-2xl font-semibold leading-tight md:leading-normal">
                         Hei,{" "}
                         <span role="img" aria-label="hand">
                             👋🏻
@@ -34,7 +34,7 @@ export default function Hero() {
                             .
                         </span>
                     </h1>
-                    <p className="text-xl leading-relaxed md:order-1 my-5 mr-5">
+                    <p className="text-xl leading-relaxed md:order-1 my-3 mr-3">
                         Selamat datang di kebun digital saya{" "}
                         <span role="img" aria-label="tanaman">
                             🌱
