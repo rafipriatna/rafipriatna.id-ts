@@ -85,13 +85,13 @@ const PostItem = (post: PostInterface) => {
 
     return (
         <Link href={post.properties.slug.rich_text[0].plain_text}>
-            <div className="rounded-md px-2 py-2 lg:mt-4 mt-2 cursor-pointer hover:bg-purple">
+            <div className="rounded-md px-2 py-2 lg:mt-4 mt-2 cursor-pointer hover:bg-purple hover:bg-opacity-30">
                 <div className="lg:flex inline-block lg:flex-row justify-between w-full lg:py-0">
                     <div className="text-lg flex inline-block lg:flex-row">
                         <div className="max-w-xs mr-2">{thumbnail}</div>
                         <h2>{post.properties.name.title[0].plain_text}</h2>
                     </div>
-                    <div className="lg:block hidden">
+                    <div className="lg:block hidden font-mono text-green">
                         <span>{postDate}</span>
                     </div>
                 </div>
