@@ -12,6 +12,7 @@ import "prismjs/components/prism-typescript"
 import "prismjs/components/prism-python"
 import "prismjs/components/prism-bash"
 import "prismjs/components/prism-php-extras"
+import "prismjs/components/prism-c"
 
 export function Text(content: TextInterface) {
     useEffect(() => {
