@@ -19,45 +19,38 @@ export default function Hero() {
 
     return (
         <div className="my-10 lg:my-20">
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
                 <div className="w-full lg:w-4/6">
-                    <h1 className="text-2xl font-semibold leading-tight md:leading-normal">
-                        Hei,{" "}
-                        <span role="img" aria-label="hand">
-                            👋🏻
-                        </span>
-                        <span className="block">
-                            Saya{" "}
-                            <span className="animate-pulse text-purple">
-                                Rafi Priatna K
-                            </span>
-                            .
-                        </span>
+                    <h1 className="text-4xl font-semibold leading-tight md:leading-normal">
+                        Hei, saya Rafi!
                     </h1>
-                    <p className="text-xl leading-relaxed md:order-1 my-3 mr-3">
-                        Selamat datang di kebun digital saya{" "}
+                    <p className="text-xl leading-relaxed md:order-1 my-4">
+                        Selamat datang di kebun digital saya.{" "}
                         <span role="img" aria-label="tanaman">
                             🌱
                         </span>
-                        .
-                        <span className="block">
-                            Saya seorang Offensive Cyber Security Engineer. Saya menulis artikel di sini selain untuk bersenang-senang, juga untuk catatan belajar saya.
+                        <span className="block mt-2">
+                            Saya seorang Offensive Cyber Security Engineer. Saya
+                            menulis artikel di sini selain untuk
+                            bersenang-senang, juga untuk catatan belajar saya.
                         </span>
                     </p>
 
-                    {links.map((link, index) => (
-                        <a
-                            className="text-white text-lg transition duration-300 ease-in-out rounded-lg border-2 border-purple hover:bg-purple my-3 px-3 py-1 mr-3 lg:px-6 lg:py-2 lg:mr-6"
-                            href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            key={index}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    <div className="mt-8">
+                        {links.map((link, index) => (
+                            <a
+                                className="text-white text-lg transition duration-300 ease-in-out rounded-lg border-2 border-purple hover:bg-purple my-3 px-3 py-1 mr-3 lg:px-6 lg:py-2 lg:mr-6"
+                                href={link.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                key={index}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
                 </div>
-                <div className="w-80 relative hidden lg:block">
+                <div className="w-48 h-48 relative hidden lg:block ml-auto">
                     <Image
                         src={Foto}
                         alt="Meeeee"
