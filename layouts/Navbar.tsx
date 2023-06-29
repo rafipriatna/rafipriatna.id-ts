@@ -27,7 +27,7 @@ export default function Navbar() {
         <>
             <div className="transition text-xl sticky top-0 bg-soft-dark border-b border-gray-400/20 bg-opacity-80 backdrop-filter backdrop-blur-md z-10">
                 <div className="flex flex-col lg:flex-row items-center py-4 mx-auto px-5 max-w-4xl container">
-                    <div className="flex items-center justify-center uppercase font-semibold text-gray-new lg:justify-between">
+                    <div className="flex items-center justify-center uppercase font-semibold text-gray-new cursor-pointer lg:justify-between">
                         <Link href="/">
                             <div className="flex space-x-2 items-center">
                                 <div>
