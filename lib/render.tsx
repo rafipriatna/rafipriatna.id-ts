@@ -42,10 +42,11 @@ export function Text(content: TextInterface) {
                             bold ? "font-bold" : null,
                             italic ? "italic" : null,
                             code
-                                ? "bg-gray-200 text-purple px-1 rounded mx-1 inline-block align-middle tracking-tight font-semibold text-base"
+                                ? "bg-purple bg-opacity-40 text-white rounded px-1 my-[-1px] inline-block align-middle font-mono text-sm"
                                 : null,
                             strikethrough ? "line-through" : null,
                             underline ? "underline" : null,
+                            "text-md tracking-wider leading-8"
                         ].join(" ")}
                         style={color !== "default" ? { color } : {}}
                     >
