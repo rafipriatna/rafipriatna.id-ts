@@ -46,7 +46,7 @@ export function Text(content: TextInterface) {
                                 : null,
                             strikethrough ? "line-through" : null,
                             underline ? "underline" : null,
-                            "text-md tracking-wider leading-8"
+                            "text-md tracking-wider leading-8",
                         ].join(" ")}
                         style={color !== "default" ? { color } : {}}
                     >
@@ -127,7 +127,9 @@ export function Blocks(block: BlockInterface) {
             return (
                 <>
                     {value.caption[0] && (
-                        <div className="text-center text-sm bg-purple bg-opacity-50 pt-1 pb-2 rounded-t-md">{value.caption[0].plain_text}</div>
+                        <div className="text-center text-sm bg-purple bg-opacity-50 pt-1 pb-2 rounded-t-md">
+                            {value.caption[0].plain_text}
+                        </div>
                     )}
                     <pre>
                         <code className={`language-${value.language}`}>
@@ -166,29 +168,23 @@ export function Blocks(block: BlockInterface) {
             const caption =
                 value.caption.length >= 1 ? value.caption[0].plain_text : ""
             return (
-                <div className="relative">
-                    <figure className="my-4 p-0 rounded-xl relative overflow-hidden">
-                        <div className="aspect-w-16 aspect-h-9 max-h-full bg-soft-dark bg-opacity-80 backdrop-filter backdrop-blur-md p-2">
-                        <Image
-                            layout="responsive"
-                            width={16}
-                            height={9}
-                            className="object-scale-down"
-                            objectPosition="center"
-                            alt={
-                            caption
-                                ? caption
-                                : "A visual depiction of what is being written about"
-                            }
-                            src={src}
-                        />
-                        </div>
-                    </figure>
-
+                <div>
+                    <div className="relative h-96">
+                        <figure className="unset-img">
+                            <Image
+                                layout="fill"
+                                className="custom-img h-96"
+                                alt={
+                                    caption
+                                        ? caption
+                                        : "A visual depiction of what is being written about"
+                                }
+                                src={src}
+                            />
+                        </figure>
+                    </div>
                     {caption && (
-                        <figcaption className="text-center">
-                        <div>{caption}</div>
-                        </figcaption>
+                        <p className="text-sm text-center mt-2">{caption}</p>
                     )}
                 </div>
             )
