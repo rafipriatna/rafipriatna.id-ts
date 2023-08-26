@@ -42,7 +42,7 @@ export function Text(content: TextInterface) {
                             bold ? "font-bold" : null,
                             italic ? "italic" : null,
                             code
-                                ? "bg-purple bg-opacity-40 text-white rounded px-1 my-[-1px] inline-block align-middle font-mono text-sm"
+                                ? "bg-purple bg-opacity-40 text-white whitespace-pre text-sm rounded px-1"
                                 : null,
                             strikethrough ? "line-through" : null,
                             underline ? "underline" : null,
