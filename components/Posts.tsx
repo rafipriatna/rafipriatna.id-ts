@@ -91,7 +91,7 @@ const PostItem = (post: PostInterface) => {
                         <div className="max-w-xs mr-2">{thumbnail}</div>
                         <h2>{post.properties.name.title[0].plain_text}</h2>
                     </div>
-                    <div className="lg:block hidden font-mono text-green">
+                    <div className="lg:block hidden font-mono">
                         <span>{postDate}</span>
                     </div>
                 </div>
