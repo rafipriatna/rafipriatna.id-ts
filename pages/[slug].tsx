@@ -51,7 +51,7 @@ export default function PostDetail(props: PostDetailInterface) {
                                             .plain_text
                                     }
                                 </h6>
-                                <p className="text-gray-400 text-lg mt-2">
+                                <p className="text-gray-400 text-sm mt-2">
                                     Terbit pada tanggal{" "}
                                     {reformatDate(
                                         props.detail.properties.date.date.start
